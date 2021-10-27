@@ -1,5 +1,5 @@
 # Phase 1 Development
-- Modules Included
+- Tasks
   - Login
   - Register
   - Forgot Password
@@ -11,4 +11,4 @@
 - [ ] Register function
 
 ### Deadline
-1/11/2021
+1/11/2021 (hope that guy don blow us xd)
