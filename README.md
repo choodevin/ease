@@ -11,4 +11,4 @@
 - [ ] Register function
 
 ### Deadline
-1/11/2021 (hope that guy don blow us xd)
+1/11/2021 (hope they guy don blow us xd)
