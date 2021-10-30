@@ -9,6 +9,8 @@
 - [x] Table creation (db.sql)
 - [ ] Login function
 - [ ] Register function
+- [ ] Entity creation
+- [ ] DB Connections
 
 ### Deadline
 1/11/2021 (hope they guy don blow us xd)
