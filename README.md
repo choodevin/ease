@@ -13,4 +13,4 @@
 - [ ] DB Connections
 
 ### Deadline
-1/11/2021 (hope they guy don blow us xd)
+1/11/2021 (hope they don blow us xd)
