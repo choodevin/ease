@@ -1,0 +1,156 @@
+:root {
+    --primary-color: #DA7070;
+    --primary-hover: #ad4b4b;
+    --meta-color: #b9b9b9;
+}
+
+body {
+    position: absolute;
+    font-family: 'Poppins' !important;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+}
+
+button {
+    font-size: 16px;
+    color: white;
+    background-color: var(--primary-color);
+    padding: 15px 25px;
+    width: 100%;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .2s;
+    align-self: center;
+    border: 1px solid transparent;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+.secondary-button {
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-color: var(--primary-color);
+    background-color: white;
+}
+
+.secondary-button:hover {
+    background-color: white;
+    border-color: var(--primary-hover);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+    margin: 0;
+    background-color: #F5F5F5;
+    padding: 0px 20px;
+    border: 1px solid transparent;
+    box-shadow: none;
+    border-radius: 50px;
+    transition: .2s;
+    margin-right: 20px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus {
+    box-shadow: none;
+}
+
+
+/* Header */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+}
+
+.logo {
+    margin-left: 5%;
+}
+
+.logo>a {
+    font-size: 2.6em;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: .2s;
+}
+
+.logo>a:hover {
+    color: var(--primary-hover);
+}
+
+.search-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.icon-button {
+    display: flex;
+}
+
+.icon-button>svg {
+    height: 35px;
+    width: 35px;
+    color: #707070;
+    align-self: center;
+}
+
+.nav {
+    margin-right: 5%;
+}
+
+.nav>a {
+    font-size: 1.1em;
+    margin: 0 30px;
+}
+
+.nav>a {
+    border-bottom: 2px solid transparent;
+    color: #707070;
+}
+
+.nav>a:hover {
+    color: #4b4b4b;
+}
+
+.selected-header-item {
+    border-bottom: 2px solid var(--primary-color) !important;
+    color: var(--primary-color) !important;
+    pointer-events: none;
+}
+
+.search-box>input {
+    width: 35vw;
+}
+
+
+/* Main */
+
+.primary-input {
+    font-size: 1.1em;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+.primary-button {
+    margin-top: 40px;
+    font-size: 1.2em;
+    color: white;
+    background-color: var(--primary-color);
+    padding: 15px 30px;
+    width: 100%;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .2s;
+}

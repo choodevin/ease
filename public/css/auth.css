@@ -1,0 +1,234 @@
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+.invi-foot {
+    background-color: transparent;
+    height: 100px;
+}
+
+.page-backdrop {
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100% - 200px);
+    padding: 0 5%;
+    background-color: var(--primary-color);
+}
+
+.page-backdrop>div {
+    margin: auto;
+}
+
+.login-container,
+.register-overall-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 575px;
+    min-height: 600px;
+    margin: auto;
+    background-color: white;
+    border-radius: 30px;
+    justify-content: center;
+}
+
+.login-container {
+    max-width: 500px;
+}
+
+.register-overall-container>form {
+    width: 100%;
+    align-self: center;
+    justify-self: center;
+}
+
+.login-container>form,
+.register-container-1,
+.register-container-2,
+.register-container-3 {
+    width: 100%;
+    padding: 0 60px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-self: center;
+}
+
+.register-container-2,
+.register-container-3 {
+    display: none;
+}
+
+.auth-header {
+    font-size: 1.6em;
+    color: #707070;
+}
+
+.auth-header>span {
+    font-size: 0.6em;
+    color: var(--meta-color);
+}
+
+.login-container>form>a,
+.register-container-1>a,
+.register-container-2>div:nth-child(7)>a {
+    align-self: flex-start;
+    font-size: 0.8em;
+    color: var(--primary-color);
+    transition: .2s;
+}
+
+.login-container>form>a:hover {
+    color: var(--primary-hover);
+}
+
+.login-container>form>input:nth-child(3),
+.login-container>form>input:nth-child(4) {
+    margin-top: 20px;
+}
+
+.login-container>form>input:nth-child(4),
+.register-container-2>div:nth-child(6) {
+    margin-bottom: 10px;
+}
+
+.login-container>form>button,
+.register-container-1>button,
+.register-container-2>button {
+    margin: 20px 0;
+    width: 180px;
+    align-self: center;
+}
+
+.login-container>form>a:nth-child(7),
+.register-container-1>a:nth-child(10) {
+    margin-top: -15px;
+    align-self: center;
+    text-align: center;
+}
+
+.login-container>form>div:nth-child(8) {
+    margin-top: 20px;
+    align-self: center;
+    color: var(--meta-color);
+}
+
+.login-banner {
+    text-align: center;
+    color: white;
+}
+
+.login-banner>div:nth-child(1) {
+    font-size: 8.5em;
+}
+
+.login-banner>div:nth-child(2) {
+    font-size: 2.5em;
+}
+
+
+/* Register */
+
+.register-container-1>input:nth-child(2),
+.register-container-1>input:nth-child(3),
+.register-container-1>input:nth-child(4),
+.register-container-1>input:nth-child(5),
+.register-container-1>input:nth-child(6),
+.register-container-1>input:nth-child(7),
+.register-container-2>input:nth-child(2),
+.register-container-2>input:nth-child(3),
+.register-container-2>input:nth-child(4) {
+    margin-top: 20px;
+}
+
+.register-container-1>input:nth-child(7) {
+    margin-bottom: 10px;
+}
+
+.register-container-2>div:nth-child(5) {
+    margin-bottom: 25px;
+}
+
+.register-container-1>input:nth-child(8) {
+    align-self: left;
+}
+
+.register-container-2>div:nth-child(7) {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.register-container-2>div:nth-child(5) {
+    margin-top: 5px;
+    color: var(--primary-color);
+    display: inline-flex;
+    flex-direction: row;
+    align-content: center;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.register-container-2>div:nth-child(5)>span,
+.register-container-2>div:nth-child(5)>svg {
+    align-self: center;
+    font-size: 14px;
+}
+
+.register-container-2>div:nth-child(6):hover {
+    color: var(--primary-hover);
+}
+
+.button-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.button-row>* {
+    margin: 0 10px;
+}
+
+.register-container-3 {
+    overflow: auto;
+    max-height: 600px;
+}
+
+.keyword-checkbox {
+    display: inline-flex;
+    margin: 8px;
+}
+
+.keyword-checkbox>label:hover {
+    border-color: var(--primary-hover);
+}
+
+.keyword-checkbox>label {
+    cursor: pointer;
+    color: var(--meta-color);
+    border: 1px solid var(--meta-color);
+    border-radius: 5px;
+    user-select: none;
+    padding: 3px 5px;
+    margin: 0;
+}
+
+.keyword-checkbox>label:hover {
+    color: var(--primary-hover);
+}
+
+.keyword-checkbox>input:checked+label {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.keyword-checkbox>input {
+    appearance: none;
+}
+
+.register-container-1,
+.register-container-2 {
+    display: none;
+}
+
+.register-container-3 {
+    display: block;
+}
