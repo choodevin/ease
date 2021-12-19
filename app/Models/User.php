@@ -10,7 +10,6 @@ class User extends Model
     use HasFactory;
 
     public $table = 'user';
-    public $timestamps = false;
 
     protected $fillable = [
         'seqid',

@@ -5,19 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ContactDetails extends Model
+class VendorDetails extends Model
 {
     use HasFactory;
 
-    public $table = 'contact_details';
+    public $table = 'vendor_details';
 
     protected $fillable = [
         'seqid',
         'reference_user',
-        'facebook',
-        'instagram',
-        'whatsapp',
-        'website',
-        'tel'
+        'category'
     ];
 }

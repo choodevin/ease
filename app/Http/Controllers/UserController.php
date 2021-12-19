@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\ContactDetails;
 use App\Models\PresetKeywords;
+use App\Models\VendorDetails;
 use App\Rules\ContactNumber;
 
 use Illuminate\Http\Request;
@@ -35,23 +36,27 @@ class UserController extends Controller
         $validateUser = $this->validateLogin($id, $password);
 
         if ($validateUser != null) {
-            session('current_user',  $validateUser);
-            return view('/home');
+            session(['current_user' =>  $validateUser]);
+            return view('home');
         } else {
             return back()->withErrors('Failed to login');
         }
     }
 
+
     public function register(Request $request)
     {
-        $name = '';
-        $email =  '';
-        $tel = '';
-        $password = '';
-        $referralCode = '';
-        $type = '';
-        $id = '';
-        $contactDetId = '';
+        $name = null;
+        $email = null;
+        $tel = null;
+        $password = null;
+        $referralCode = null;
+        $type = null;
+        $id = null;
+        $contactDetId = null;
+        $vendorDetId = null;
+        $category = null;
+        $address = null;
 
         if ($request->has(UserController::USER_TYPE_MEMBER)) {
             $this->validate(
@@ -90,7 +95,6 @@ class UserController extends Controller
                     'password' => 'required',
                     'address' => ['required', 'max:16777215'],
                     'category' => ['required', 'max:100'],
-                    'keyword' => ['required', 'max:100'],
                 ],
                 [
                     'name.required' => 'Name is empty',
@@ -101,9 +105,19 @@ class UserController extends Controller
                     'email.unique' => 'Email entered is an existing user',
                     'address.required' => 'Address is empty',
                     'category.required' => 'Category is empty',
-                    'keyword.required' => 'Keyword is empty',
                 ]
-            );
+            ); 
+            $name = trim($request->input('name'));
+            $email =  $request->input('email');
+            $tel = $request->input('tel');
+            $password = Hash::make($request->input('password'));
+            $referralCode = $request->input('referralCode');
+            $address = $request->input('address');
+            $category = $request->input('category');
+            $type = UserController::USER_TYPE_VENDOR;
+            $id = User::max('seqid') + 1;
+            $contactDetId = ContactDetails::max('seqid') + 1;
+            $vendorDetId = VendorDetails::max('seqid') + 1;
         } else {
             return view('register', ['error' => 'An error has occured']);
         }
@@ -115,7 +129,8 @@ class UserController extends Controller
                 'email' => $email,
                 'password' => $password,
                 'referral_code' => $referralCode,
-                'type' => $type
+                'type' => $type,
+                'address' => $address,
             ]
         );
 
@@ -126,6 +141,14 @@ class UserController extends Controller
                 'reference_user' => $id
             ]
         );
+
+        if($request->has(UserController::USER_TYPE_VENDOR)) {
+            $createVendorDetails = VendorDetails::create([
+                'seqid' => $vendorDetId,
+                'reference_user' => $id,
+                'category' => $category
+           ]);
+        }
 
         if ($createUser && $createContactDetails) {
             return view('home');
@@ -171,5 +194,14 @@ class UserController extends Controller
         }
 
         return null;
+    }
+
+    public static function checkLoggedIn() {
+        $user = session('current_user');
+
+        if(!empty($user)) {
+            return true;
+        }
+        return false;
     }
 }

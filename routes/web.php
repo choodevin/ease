@@ -15,7 +15,11 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('login');
+    if(UserController::checkLoggedIn()) {
+        return view('login');
+    } else {
+        return view('login');
+    }
 })->name('login');
 Route::post('/', [UserController::class, 'login']);
 

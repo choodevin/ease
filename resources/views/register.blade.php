@@ -25,8 +25,8 @@
             <div class="register-overall-container">
                 <?php if (isset($_GET['registerAs']) && $_GET['registerAs'] == "member") { ?>
                 <form action="/register" method="POST">
+                    @csrf
                     <div class="register-container-1">
-                        @csrf
                         <div class="auth-header">Register <span>as member</span></div>
                         <input name="name" type="text" placeholder="Full Name">
                         <input name="email" type="email" placeholder="Email">
@@ -61,10 +61,6 @@
                         <div class="auth-header">Register <span>as vendor</span></div>
                         <input name="address" type="text" placeholder="Company Address">
                         <input name="category" type="text" placeholder="Category">
-                        <div id="more-keywords" class="more-keywords">
-                            <span>Select more keyword(s)</span>
-                            <span class="iconify" data-icon="akar-icons:chevron-right"></span>
-                        </div>
                         <div class="button-row">
                             <button id="btn-register-container-2" class="secondary-button">Back</button>
                             <button name="vendor">Register</button>
@@ -74,38 +70,6 @@
                         </div>
                     </div>
 
-                    <div id="register-container-3" class="register-container-3">
-                        <div class="auth-header">Register <span>as vendor</span></div>
-                        @if (count($keywordList) > 0)
-                            @foreach ($keywordList as $keyword)
-                                <div class="keyword-checkbox">
-                                    <input id='{{ $keyword }}' name='keyword' value='{{ $keyword }}'
-                                        type='checkbox'>
-                                    <label for="{{ $keyword }}">{{ $keyword }}</label>
-                                </div>
-                            @endforeach
-                        @endif
-                        <div class="keyword-checkbox">
-                            <input id='Others' name='keyword' value='Others' type='checkbox'>
-                            <label for="Others">Others</label>
-                        </div>
-                        <div id="others-list">
-                            <ul>
-                                <li>1</li>
-                                <li>1</li>
-                                <li>1</li>
-                                <li>1</li>
-                                <li>1</li>
-                                <li>1</li>
-                                <li>1</li>
-                                <li>1</li>
-                                <li>1</li>
-                                <li>1</li>
-                                <li>1</li>
-                                <li>1</li>
-                            </ul>
-                        </div>
-                    </div>
                 </form>
                 <?php } ?>
                 @if ($errors->any())
