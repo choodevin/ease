@@ -15,8 +15,8 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    if(UserController::checkLoggedIn()) {
-        return view('login');
+    if(UserController::isLoggedIn()) {
+        return view('home');
     } else {
         return view('login');
     }

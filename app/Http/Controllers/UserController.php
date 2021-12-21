@@ -196,7 +196,7 @@ class UserController extends Controller
         return null;
     }
 
-    public static function checkLoggedIn() {
+    public static function isLoggedIn() {
         $user = session('current_user');
 
         if(!empty($user)) {
