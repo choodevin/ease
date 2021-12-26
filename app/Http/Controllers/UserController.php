@@ -37,7 +37,7 @@ class UserController extends Controller
 
         if ($validateUser != null) {
             session(['current_user' =>  $validateUser]);
-            return view('home');
+            return redirect()->route('home');
         } else {
             return back()->withErrors('Failed to login');
         }
@@ -106,7 +106,7 @@ class UserController extends Controller
                     'address.required' => 'Address is empty',
                     'category.required' => 'Category is empty',
                 ]
-            ); 
+            );
             $name = trim($request->input('name'));
             $email =  $request->input('email');
             $tel = $request->input('tel');
@@ -142,12 +142,12 @@ class UserController extends Controller
             ]
         );
 
-        if($request->has(UserController::USER_TYPE_VENDOR)) {
+        if ($request->has(UserController::USER_TYPE_VENDOR)) {
             $createVendorDetails = VendorDetails::create([
                 'seqid' => $vendorDetId,
                 'reference_user' => $id,
                 'category' => $category
-           ]);
+            ]);
         }
 
         if ($createUser && $createContactDetails) {
@@ -196,12 +196,19 @@ class UserController extends Controller
         return null;
     }
 
-    public static function isLoggedIn() {
+    public function logout(Request $request) {
+        $request->session()->flush();
+
+        return redirect()->route('login');
+    }
+
+    public static function isLoggedIn()
+    {
         $user = session('current_user');
 
-        if(!empty($user)) {
+        if (!empty($user))
             return true;
-        }
+
         return false;
     }
 }

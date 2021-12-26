@@ -15,8 +15,8 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    if(UserController::isLoggedIn()) {
-        return view('home');
+    if (UserController::isLoggedIn()) {
+        return redirect()->route('home');
     } else {
         return view('login');
     }
@@ -29,3 +29,5 @@ Route::post('/register', [UserController::class, 'register']);
 Route::get('/home', function () {
     return view('home');
 })->name('home');
+
+Route::get('/logout', [UserController::class, 'logout'])->name('logout');
