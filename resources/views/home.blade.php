@@ -19,6 +19,12 @@
 
 <body class="antialiased">
     @include('_layout/header')
+    <div class="overall-container">
+        @include('_layout/sidebar')
+        <div class="content-container">
+            HOMEPAGE HERE
+        </div>
+    </div>
 </body>
 
 </html>

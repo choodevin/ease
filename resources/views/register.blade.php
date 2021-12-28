@@ -37,6 +37,12 @@
                         <a href="{{ route('register', ['registerAs' => 'vendor']) }}">Register as Vendor</a>
                         <button name="member">Register</button>
                         <a href="/">Log In</a>
+                        @if ($errors->any())
+                            <div class="error-message-box">
+                                <span class="iconify" data-icon="mdi:close-circle"></span>
+                                <span>{{ $errors->first() }}</span>
+                            </div>
+                        @endif
                     </div>
                 </form>
                 <?php } ?>
@@ -55,6 +61,12 @@
                         <a href="{{ route('register', ['registerAs' => 'member']) }}">Register as Member</a>
                         <button id="btn-register-container-1">Next</button>
                         <a href="/">Log In</a>
+                        @if ($errors->any())
+                            <div class="error-message-box">
+                                <span class="iconify" data-icon="mdi:close-circle"></span>
+                                <span>{{ $errors->first() }}</span>
+                            </div>
+                        @endif
                     </div>
 
                     <div id="register-container-2" class="register-container-2">
@@ -72,11 +84,6 @@
 
                 </form>
                 <?php } ?>
-                @if ($errors->any())
-                    <div class="error-message-box">
-                        <span>{{ $errors->first() }}</span>
-                    </div>
-                @endif
             </div>
         </div>
         <div class="login-banner cell large-auto show-for-large">

@@ -31,6 +31,7 @@
                     <a href="{{ route('register', ['registerAs' => 'member']) }}">Register Now</a>
                     @if ($errors->any())
                         <div class="error-message-box">
+                            <span class="iconify" data-icon="mdi:close-circle"></span>
                             <span>{{ $errors->first() }}</span>
                         </div>
                     @endif
