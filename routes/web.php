@@ -31,3 +31,17 @@ Route::get('/home', function () {
 })->name('home');
 
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+
+Route::get('/profile', function(){
+    return view('profile');
+})->name('profile');
+// Route::view('profile','profile',['name'=> 'haha']);
+
+Route::get('/panel', function(){
+    return view('panel');
+})->name('panel');
+
+
+
+
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ config('app.user_profile') }}</title>
+
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+    <link rel="stylesheet" href="{{ asset('css/foundation.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/jquery-ui.js') }}"></script>
+    <script src="{{ asset('js/foundation.js') }}"></script>
+    <script src="{{ asset('js/auth.js') }}"></script>
+    <script src='https://code.iconify.design/2/2.0.4/iconify.min.js'></script>
+</head>
+
+<body class="antialiased">
+    @include('_layout/header')
+    <div class="overall-container">
+        <p>+ Create Post</p>
+        <p>(logo) Title (...)</p>
+        <p>(whatsapp)(fb)(ig)(phone)</p>
+        <p>(follow)</p>
+    </div>
+</body>
+
+</html>

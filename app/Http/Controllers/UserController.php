@@ -189,7 +189,7 @@ class UserController extends Controller
 
         if ($userValidate != null) {
             if (Hash::check($password, $userValidate->password)) {
-                return $userValidate->seqid;
+                return $userValidate;
             }
         }
 
