@@ -6,6 +6,7 @@
     --nav-hover: #4b4b4b;
     --error-red: #ff5151;
     --background-color: #F5F5F5;
+    --primary-text-color: #707070;
 }
 
 body {
@@ -220,4 +221,31 @@ input[type="tel"]:focus {
     align-self: center;
     height: 25px;
     width: 25px;
+}
+
+.selected-sidebar-item {
+    color: var(--primary-color) !important;
+    pointer-events: none;
+}
+
+
+/* Post & Products */
+
+.item-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-container>.item-image {
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.item-container>.item-title {
+    color: var(--primary-text-color);
+}
+
+.item-container>.item-description {
+    color: var(--primary-text-color);
 }

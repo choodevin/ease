@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,16 +27,13 @@ Route::post('/', [UserController::class, 'login']);
 Route::get('/register', [UserController::class, 'getPresetKeywords'])->name('register');
 Route::post('/register', [UserController::class, 'register']);
 
-Route::get('/home', function () {
-    return view('home');
-})->name('home');
+Route::get('/home', [PostController::class, 'getHomePostData'])->name('home');
 
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
 Route::get('/profile', function(){
     return view('profile');
 })->name('profile');
-// Route::view('profile','profile',['name'=> 'haha']);
 
 Route::get('/panel', function(){
     return view('panel');

@@ -231,5 +231,4 @@ return [
     ],
 
     'web_title' => 'EASE',
-    'user_profile' => 'User Profile'
 ];

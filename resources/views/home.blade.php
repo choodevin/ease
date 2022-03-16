@@ -22,7 +22,14 @@
     <div class="overall-container">
         @include('_layout/sidebar')
         <div class="content-container">
-            HOMEPAGE HERE
+            @if ($homeData != null)
+                @foreach ($homeData as $item)
+                    <div class="item-container">
+                        <img class="item-image" src="{{ asset('res/food1.jpg') }}">
+                        <div class="item-title">{{ $item->title }}</div>
+                    </div>
+                @endforeach
+            @endif
         </div>
     </div>
 </body>
